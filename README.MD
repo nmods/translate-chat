@@ -1,5 +1,6 @@
 # translate-chat
 translates incoming chat text into another language
+NMods's version, see original here: https://github.com/teralove/translate-chat
 
 # Requires Caali's proxy
 - https://discord.gg/maqBmJV
@@ -7,7 +8,8 @@ translates incoming chat text into another language
 ## Info
 - Default is translate text into English.
 - Uses Google Translate, so don't expect the translations to be 100% accurate.
-- Use language codes to set ('en' = English, 'es' = Spanish, etc.) [Click here](https://ctrlq.org/code/19899-google-translate-languages) for list of codes.
+- Use language codes to set ('en' = English, 'es' = Spanish, etc.) [Click here](https://pastebin.com/raw/fe0ZQynE) for list of codes.
+  - You can also set by language name (english, spanish, french, etc.)
 - The in-game font may not support characters for all languages.
 - Translations take a second to process so if chat is getting spammed then incoming translated text may be out of order.
 
@@ -25,9 +27,20 @@ translates incoming chat text into another language
 ### `translate send (language)`
 - Use this to translate outgoing messages into another language.
 
+#### `translate send more`
+- Toggle showing original message after translated one. Default: disabled
+
+### `translate list`
+- Open list of available languages
+
 ## Changelog
 <details>
-
+    1.6 (by NMods)
+    - added transliteration (you can now translate yourself to for example Japanese and it will show in chat)
+    - added ~40 languages
+    - code changes
+    - qol changes
+    - config changes
     1.5 (by Haku)
     - Added Send Mode
     1.4 (by Haku)
@@ -45,8 +58,9 @@ translates incoming chat text into another language
 </details>
 
 # Credits
-- Original mod by teralove
+- Original mod by teralove and Hakuryuudom
 
 ---
 
-![Screenshot](https://i.imgur.com/JPngjxU.jpg)
+![Screenshot](https://i.imgur.com/0PoWcTD.png)
+![Screenshot](https://i.imgur.com/Sxm8Uy8.png)
