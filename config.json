@@ -1,0 +1,8 @@
+{
+    "enabled": true,
+    "sourceLang": "any",
+    "targetLang": "en",
+    "sendMode": false,
+    "sendLang": "ja",
+    "sendMore": false
+}
