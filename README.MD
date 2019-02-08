@@ -35,6 +35,7 @@ NMods's version, see original here: https://github.com/teralove/translate-chat
 
 ## Changelog
 <details>
+
     1.6 (by NMods)
     - added transliteration (you can now translate yourself to for example Japanese and it will show in chat)
     - added ~40 languages
