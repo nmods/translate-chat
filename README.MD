@@ -1,5 +1,5 @@
 # translate-chat
-translates incoming chat text into another language
+translates incoming chat text into another language<br />
 NMods's version, see original here: https://github.com/teralove/translate-chat
 
 # Requires Caali's proxy
