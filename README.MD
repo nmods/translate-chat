@@ -35,31 +35,31 @@ NMods's version, see original here: https://github.com/teralove/translate-chat
 
 ## Changelog
 <details>
-    1.7 (by NMods)
-    - changed google translate api (old one didnt work anymore)
-    - disabled in global channels
-    - additional transliteration if google produces shit results
-    - added ~10 languages
-    - update S_CHAT and S_WHISPER to 3
-    1.6 (by NMods)
-    - added transliteration (you can now translate yourself to for example Japanese and it will show in chat)
-    - added ~40 languages
-    - code changes
-    - qol changes
-    - config changes
-    1.5 (by Haku)
-    - Added Send Mode
-    1.4 (by Haku)
-    - Autoupdate + new commands
-    1.3
-    - Renamed dependencies folder into node_modules
-    1.2
-    - Fix: Whispers and private chat not working.
-    1.1
-    - included missing dependencies
-    - removed trailing whitespaces which was causing unnecessary messages being received.
-    1.0
-    - initial release
+    1.7 (by NMods)<br>
+    - changed google translate api (old one didnt work anymore)<br>
+    - disabled in global channels<br>
+    - additional transliteration if google produces shit results<br>
+    - added ~10 languages<br>
+    - update S_CHAT and S_WHISPER to 3<br>
+    1.6 (by NMods)<br>
+    - added transliteration (you can now translate yourself to for example Japanese and it will show in chat)<br>
+    - added ~40 languages<br>
+    - code changes<br>
+    - qol changes<br>
+    - config changes<br>
+    1.5 (by Haku)<br>
+    - Added Send Mode<br>
+    1.4 (by Haku)<br>
+    - Autoupdate + new commands<br>
+    1.3<br>
+    - Renamed dependencies folder into node_modules<br>
+    1.2<br>
+    - Fix: Whispers and private chat not working.<br>
+    1.1<br>
+    - included missing dependencies<br>
+    - removed trailing whitespaces which was causing unnecessary messages being received.<br>
+    1.0<br>
+    - initial release<br>
 
 </details>
 
