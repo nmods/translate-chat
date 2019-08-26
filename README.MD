@@ -35,7 +35,12 @@ NMods's version, see original here: https://github.com/teralove/translate-chat
 
 ## Changelog
 <details>
-
+    1.7 (by NMods)
+    - changed google translate api (old one didnt work anymore)
+    - disabled in global channels
+    - additional transliteration if google produces shit results
+    - added ~10 languages
+    - update S_CHAT and S_WHISPER to 3
     1.6 (by NMods)
     - added transliteration (you can now translate yourself to for example Japanese and it will show in chat)
     - added ~40 languages

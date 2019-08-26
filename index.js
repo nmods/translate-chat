@@ -4,119 +4,119 @@
 const path = require('path');
 const fs = require('fs');
 const lang = {
-    af: 'Afrikaans',
-    sq: 'Albanian',
-    am: 'Amharic',
-    ar: 'Arabic',
-    hy: 'Armenian',
-    az: 'Azeerbaijani',
-    eu: 'Basque',
-    be: 'Belarusian',
-    bn: 'Bengali',
-    bs: 'Bosnian',
-    bg: 'Bulgarian',
-    ca: 'Catalan',
-    ceb: 'Cebuano',
+    'auto': 'Automatic',
+    'af': 'Afrikaans',
+    'sq': 'Albanian',
+    'am': 'Amharic',
+    'ar': 'Arabic',
+    'hy': 'Armenian',
+    'az': 'Azerbaijani',
+    'eu': 'Basque',
+    'be': 'Belarusian',
+    'bn': 'Bengali',
+    'bs': 'Bosnian',
+    'bg': 'Bulgarian',
+    'ca': 'Catalan',
+    'ceb': 'Cebuano',
+    'ny': 'Chichewa',
     'zh-CN': 'Chinese (Simplified)',
-    'zh': 'Chinese (Simplified)',
     'zh-TW': 'Chinese (Traditional)',
-    co: 'Corsican',
-    hr: 'Croatian',
-    cs: 'Czech',
-    da: 'Danish',
-    nl: 'Dutch',
-    en: 'English',
-    eo: 'Esperanto',
-    et: 'Estonian',
-    fi: 'Finnish',
-    fr: 'French',
-    fy: 'Frisian',
-    gl: 'Galician',
-    ka: 'Georgian',
-    de: 'German',
-    el: 'Greek',
-    gu: 'Gujarati',
-    ht: 'Haitian Creole',
-    ha: 'Hausa',
-    haw: 'Hawaiian',
-    he: 'Hebrew',
-    iw: 'Hebrew',
-    hi: 'Hindi',
-    hmn: 'Hmong',
-    hu: 'Hungarian',
-    is: 'Icelandic',
-    ig: 'Igbo',
-    id: 'Indonesian',
-    ga: 'Irish',
-    it: 'Italian',
-    ja: 'Japanese',
-    jw: 'Javanese',
-    kn: 'Kannada',
-    kk: 'Kazakh',
-    km: 'Khmer',
-    ko: 'Korean',
-    ku: 'Kurdish',
-    ky: 'Kyrgyz',
-    lo: 'Lao',
-    la: 'Latin',
-    lv: 'Latvian',
-    lt: 'Lithuanian',
-    lb: 'Luxembourgish',
-    mk: 'Macedonian',
-    mg: 'Malagasy',
-    ms: 'Malay',
-    ml: 'Malayalam',
-    mt: 'Maltese',
-    mi: 'Maori',
-    mr: 'Marathi',
-    mn: 'Mongolian',
-    my: 'Myanmar (Burmese)',
-    ne: 'Nepali',
-    no: 'Norwegian',
-    ny: 'Nyanja (Chichewa)',
-    ps: 'Pashto',
-    fa: 'Persian',
-    pl: 'Polish',
-    pt: 'Portuguese, Brazilian',
-    pa: 'Punjabi',
-    ro: 'Romanian',
-    ru: 'Russian',
-    sm: 'Samoan',
-    gd: 'Scots Gaelic',
-    sr: 'Serbian',
-    st: 'Sesotho',
-    sn: 'Shona',
-    sd: 'Sindhi',
-    si: 'Sinhala (Sinhalese)',
-    sk: 'Slovak',
-    sl: 'Slovenian',
-    so: 'Somali',
-    es: 'Spanish',
-    su: 'Sundanese',
-    sw: 'Swahili',
-    sv: 'Swedish',
-    tl: 'Tagalog (Filipino)',
-    tg: 'Tajik',
-    ta: 'Tamil',
-    te: 'Telugu',
-    th: 'Thai',
-    tr: 'Turkish',
-    uk: 'Ukrainian',
-    ur: 'Urdu',
-    uz: 'Uzbek',
-    vi: 'Vietnamese',
-    cy: 'Welsh',
-    xh: 'Xhosa',
-    yi: 'Yiddish',
-    yo: 'Yoruba',
-    zu: 'Zulu',
-    any: 'Any'
+    'co': 'Corsican',
+    'hr': 'Croatian',
+    'cs': 'Czech',
+    'da': 'Danish',
+    'nl': 'Dutch',
+    'en': 'English',
+    'eo': 'Esperanto',
+    'et': 'Estonian',
+    'tl': 'Filipino',
+    'fi': 'Finnish',
+    'fr': 'French',
+    'fy': 'Frisian',
+    'gl': 'Galician',
+    'ka': 'Georgian',
+    'de': 'German',
+    'el': 'Greek',
+    'gu': 'Gujarati',
+    'ht': 'Haitian Creole',
+    'ha': 'Hausa',
+    'haw': 'Hawaiian',
+    'he': 'Hebrew',
+    'iw': 'Hebrew',
+    'hi': 'Hindi',
+    'hmn': 'Hmong',
+    'hu': 'Hungarian',
+    'is': 'Icelandic',
+    'ig': 'Igbo',
+    'id': 'Indonesian',
+    'ga': 'Irish',
+    'it': 'Italian',
+    'ja': 'Japanese',
+    'jw': 'Javanese',
+    'kn': 'Kannada',
+    'kk': 'Kazakh',
+    'km': 'Khmer',
+    'ko': 'Korean',
+    'ku': 'Kurdish (Kurmanji)',
+    'ky': 'Kyrgyz',
+    'lo': 'Lao',
+    'la': 'Latin',
+    'lv': 'Latvian',
+    'lt': 'Lithuanian',
+    'lb': 'Luxembourgish',
+    'mk': 'Macedonian',
+    'mg': 'Malagasy',
+    'ms': 'Malay',
+    'ml': 'Malayalam',
+    'mt': 'Maltese',
+    'mi': 'Maori',
+    'mr': 'Marathi',
+    'mn': 'Mongolian',
+    'my': 'Myanmar (Burmese)',
+    'ne': 'Nepali',
+    'no': 'Norwegian',
+    'ps': 'Pashto',
+    'fa': 'Persian',
+    'pl': 'Polish',
+    'pt': 'Portuguese',
+    'pa': 'Punjabi',
+    'ro': 'Romanian',
+    'ru': 'Russian',
+    'sm': 'Samoan',
+    'gd': 'Scots Gaelic',
+    'sr': 'Serbian',
+    'st': 'Sesotho',
+    'sn': 'Shona',
+    'sd': 'Sindhi',
+    'si': 'Sinhala',
+    'sk': 'Slovak',
+    'sl': 'Slovenian',
+    'so': 'Somali',
+    'es': 'Spanish',
+    'su': 'Sundanese',
+    'sw': 'Swahili',
+    'sv': 'Swedish',
+    'tg': 'Tajik',
+    'ta': 'Tamil',
+    'te': 'Telugu',
+    'th': 'Thai',
+    'tr': 'Turkish',
+    'uk': 'Ukrainian',
+    'ur': 'Urdu',
+    'uz': 'Uzbek',
+    'vi': 'Vietnamese',
+    'cy': 'Welsh',
+    'xh': 'Xhosa',
+    'yi': 'Yiddish',
+    'yo': 'Yoruba',
+    'zu': 'Zulu'
 }
 
 module.exports = function TranslateChat(mod) {
-    const translate = require('node-google-translate-skidz');
-    const latinize = require('latinize');
+    const translate = require('@vitalets/google-translate-api');
     const config = require('./config.json')
+    const transliteration = require('transliteration')
+    const tr = transliteration.transliterate
 
     mod.game.on('leave_loading_screen', leaveLoadingScreen)
 
@@ -127,25 +127,26 @@ module.exports = function TranslateChat(mod) {
         }
     }
 
-    mod.hook('S_CHAT', 2, { order: 100 }, (event) => {
+    mod.hook('S_CHAT', 3, { order: 100 }, (event) => {
         if (!config.enabled) return;
-        if (event.authorName === mod.game.me.name) return;
+        if ([27, 213, 214, 4, 3].includes(event.channel)) return; //exclude global channels (global, megaphone, guild adv, trade, area)
+        if (event.name === mod.game.me.name) return;
         if (/@social/.test(event.message)) return;
 
         getTranslation(event, config.targetLang, function (query) {
             if (query != undefined) {
-                mod.send('S_CHAT', 2, Object.assign({}, event, { message: query.translation, authorName: event.authorName + getNiceLangString(query) }));
+                mod.send('S_CHAT', 3, Object.assign({}, event, { message: query.text, name: event.name + getNiceLangString(query) }));
             }
         });
     });
 
-    mod.hook('S_WHISPER', 2, { order: 100 }, (event) => {
+    mod.hook('S_WHISPER', 3, { order: 100 }, (event) => {
         if (!config.enabled) return;
-        if (event.authorName === mod.game.me.name) return;
+        if (event.name === mod.game.me.name) return;
 
         getTranslation(event, config.targetLang, function (query) {
             if (query != undefined) {
-                mod.send('S_WHISPER', 2, Object.assign({}, event, { message: query.translation, authorName: event.authorName + getNiceLangString(query) }));
+                mod.send('S_WHISPER', 3, Object.assign({}, event, { message: query.text, name: event.name + getNiceLangString(query) }));
             }
         });
     });
@@ -156,7 +157,7 @@ module.exports = function TranslateChat(mod) {
 
         getTranslation(event, config.targetLang, function (query) {
             if (query != undefined) {
-                mod.send('S_PRIVATE_CHAT', 1, Object.assign({}, event, { message: query.translation, authorName: event.authorName + getNiceLangString(query) }));
+                mod.send('S_PRIVATE_CHAT', 1, Object.assign({}, event, { message: query.text, authorName: event.authorName + getNiceLangString(query) }));
             }
         });
     });
@@ -167,12 +168,9 @@ module.exports = function TranslateChat(mod) {
             getTranslation(event, config.sendLang, function (query) {
 
                 if (query != undefined) {
-                    if (mod.region === 'na') {
-                        query.translation = latinize(query.translation).replace(/[^\x00-\x7F]/g, "").replace(/\s+$/, '')
-                    }
-                    let original = config.sendMore ? ' (' + query.sentences[0].orig + ')' : ''
+                    let original = config.sendMore ? ' (' + query.orig + ')' : ''
                     mod.send('C_WHISPER', 1, Object.assign({}, event, {
-                        message: '<FONT>' + query.translation + original + '</FONT>',
+                        message: '<FONT>' + query.text + original + '</FONT>',
                         target: event.target.replace(/\(.*/, '').replace(/\s+$/, '')
                     }))
                     mod.command.message('Original message' + getNiceLangString(query) + ': ' + event.message.replace(/<(.+?)>|&rt;|&lt;|&gt;|/g, '').replace(/\s+$/, ''))
@@ -190,11 +188,8 @@ module.exports = function TranslateChat(mod) {
             if (/@social/.test(event.message)) return undefined
             getTranslation(event, config.sendLang, function (query) {
                 if (query != undefined) {
-                    if (mod.region === 'na') {
-                        query.translation = latinize(query.translation).replace(/[^\x00-\x7F]/g, "").replace(/\s+$/, '')
-                    }
-                    let original = config.sendMore ? ' (' + query.sentences[0].orig + ')' : ''
-                    mod.send('C_CHAT', 1, Object.assign({}, event, { message: '<FONT>' + query.translation + original + '</FONT>' }))
+                    let original = config.sendMore ? ' (' + query.orig + ')' : ''
+                    mod.send('C_CHAT', 1, Object.assign({}, event, { message: '<FONT>' + query.text + original + '</FONT>' }))
                     mod.command.message('Original message' + getNiceLangString(query) + ': ' + event.message.replace(/<(.+?)>|&rt;|&lt;|&gt;|/g, '').replace(/\s+$/, ''))
                 } else {
                     mod.send('C_CHAT', 1, event);
@@ -212,7 +207,7 @@ module.exports = function TranslateChat(mod) {
     })
 
     function getNiceLangString(query) {
-        let niceName = lang[query.ld_result.srclangs[0]]
+        let niceName = lang[query.from.language.iso]
         if (!niceName) console.log(query)
         return ' (' + niceName + ')'
     }
@@ -226,27 +221,31 @@ module.exports = function TranslateChat(mod) {
         if (sanitized === '') {
             callback(undefined);
         } else {
-            translate({
-                text: sanitized,
-                source: config.sourceLang,
-                target: toLang
-            }, function (result) {
+            translate(sanitized, {
+                from: config.sourceLang,
+                to: toLang
+            }).then(result => {
                 //console.log(result)
                 try {
-                    if (result.translation !== sanitized && result.ld_result.srclangs[0] !== toLang) {
-                        if (result.sentences[1] && result.sentences[1].translit) {
-                            result.translation = result.sentences[1].translit
+                    if (result.text !== sanitized && result.from.language.iso !== toLang) {
+                        result.origtrans = result.text
+                        if (result.pronunciation) {
+                            result.text = result.pronunciation
+                            if (/[\u0300-\u036F]/.test(result.text)) {
+                                result.text = tr(result.text)
+                            }
                         }
-                        if (result.translation != '') callback(result)
+                        result.orig = event.message
+                        if (result.text != '') callback(result)
                         else mod.command.message('Error: Your message could not be sent because it contains illegal characters.')
                     } else {
                         callback(undefined);
                     }
                 } catch (error) {
-                    console.log(error)
-                    console.log(result)
+                    //console.log(error)
+                    //console.log(result)
                 }
-            });
+            })
         }
     }
 
@@ -306,17 +305,18 @@ module.exports = function TranslateChat(mod) {
                     break
                 }
                 langCode = getLanguageCode(args.slice(1).join(' '))
+                mod.command.message(langCode)
                 if (langCode) {
                     config.sendMode = true;
                     config.sendLang = langCode;
-                    mod.command.message('Now translating outgoing messages to: ' + langName(config.sendLang) + '.')
+                    mod.command.message('Now translating outgoing messages to: ' + langName(config.sendLang) + '. Send more is ' + (config.sendMore ? 'enabled.' : 'disabled.'))
                 } else {
                     mod.command.message('Error : ' + args.slice(1).join(' ') + ' is not a valid language. See readme or index.js for available languages. Recommended Setting: en')
                 }
                 break
             case 'list':
                 mod.send("S_SHOW_AWESOMIUMWEB_SHOP", 1, {
-                    link: 'https://pastebin.com/raw/fe0ZQynE'
+                    link: 'https://pastebin.com/raw/WMYaYTDC'
                 });
                 break
             default:
@@ -327,6 +327,9 @@ module.exports = function TranslateChat(mod) {
     });
 
     function getLanguageCode(arg) {
+        if (['zh', 'zh-cn'].includes(arg.toLowerCase())) return 'zh-CN'
+        if (arg.toLowerCase() == 'zh-tw') return 'zh-TW'
+        if (arg.toLowerCase() == 'any') return 'auto'
         if (Object.keys(lang).includes(arg.toLowerCase())) return arg.toLowerCase()
         let index = Object.values(lang).findIndex(value => value.toLowerCase() == arg.toLowerCase())
         if (index != -1) return Object.keys(lang)[index]
