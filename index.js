@@ -129,7 +129,7 @@ module.exports = function TranslateChat(mod) {
 
     mod.hook('S_CHAT', 3, { order: 100 }, (event) => {
         if (!config.enabled) return;
-        if ([27, 213, 214, 4, 3].includes(event.channel)) return; //exclude global channels (global, megaphone, guild adv, trade, area)
+        //if ([27, 213, 214, 4, 3].includes(event.channel)) return; //exclude global channels (global, megaphone, guild adv, trade, area)
         if (event.name === mod.game.me.name) return;
         if (/@social/.test(event.message)) return;
 
