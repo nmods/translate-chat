@@ -1,7 +1,7 @@
 {
 	"files": {
 		"config.json": "6dc381a2bdf9172793b52a21d493e8156f48f857c03172e05c0607d221234c7d",
-		"index.js": "e6558e4d3eab75df8e1dc94b14f8d948bc73b9fa6269c68b57b47becd5007710",
+		"index.js": "424d83b5dc752fd7d8aa312cf3efc75de989ec8dcae024878daf9caba9334dfe",
 		"module.json": "3fc2847b7483c88edaa651cc9bcc4561f16872467701dcb0b3ed885ab0db9c63",
 		"node_modules/@sindresorhus/is/dist/index.d.ts": "f154e143317f34fb04b99727bdbf2eada6f387341fb668628f8fb50eae63a031",
 		"node_modules/@sindresorhus/is/dist/index.js": "3cf0579a4ffc2209c21730893678f961f91991d0049ac8b907ae6d71769eee1a",
