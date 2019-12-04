@@ -2,7 +2,7 @@
 	"disableAutoUpdate": false,
 	"name": "Translate",
 	"author": "NMods / HakuryuuDom / teralove",
-	"version": "1.7",
+	"version": "1.8",
 	"description": "Translates incoming and outgoing messages to another language using Google Translate.",
 	"options": {
 		"niceName": "Translate"

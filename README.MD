@@ -35,6 +35,10 @@ NMods's version, see original here: https://github.com/teralove/translate-chat
 
 ## Changelog
 <details>
+    1.8 (by NMods)<br>
+    - removed useless dependencies<br>
+    - using simple request now<br>
+    - actually works<br>
     1.7 (by NMods)<br>
     - changed google translate api (old one didnt work anymore)<br>
     - disabled in global channels<br>
