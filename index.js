@@ -125,7 +125,7 @@ module.exports = function TranslateChat(mod) {
 		}
 	}
 
-	const incoming = async (packet, version, event) => {
+	const incoming = (packet, version, event) => {
 		if (!config.enabled) return;
 		if ([event.name, event.authorName].includes(mod.game.me.name)) return;
 		if (mod.game.me.is(event.gameId)) return
