@@ -35,6 +35,9 @@ NMods's version, see original here: https://github.com/teralove/translate-chat
 
 ## Changelog
 <details>
+    1.9 (by NMods)<br>
+    - fixed multi sentence<br>
+    - using node-fetch<br>
     1.8 (by NMods)<br>
     - removed useless dependencies<br>
     - using simple request now<br>

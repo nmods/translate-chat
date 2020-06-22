@@ -1,7 +1,7 @@
 'use strict'
 const path = require('path');
 const fs = require('fs');
-const request = require('request-promise-native');
+const request = require('node-fetch');
 const lang = {
 	'auto': 'Automatic',
 	'af': 'Afrikaans',
@@ -130,7 +130,7 @@ module.exports = function TranslateChat(mod) {
 		if ([event.name, event.authorName].includes(mod.game.me.name)) return;
 		if (mod.game.me.is(event.gameId)) return
 		if (packet == 'S_CHAT') {
-			// if ([27, 213, 214, 4, 3].includes(event.channel)) return; //exclude global channels (global, megaphone, guild adv, trade, area)
+			//if ([27, 213, 214, 4, 3].includes(event.channel)) return; //exclude global channels (global, megaphone, guild adv, trade, area)
 			if (/@social/.test(event.message)) return;
 			if (/\bWT[BTS]\b/i.test(event.message)) return;
 		}
@@ -138,6 +138,7 @@ module.exports = function TranslateChat(mod) {
 		// console.log(event)
 		translate(event.message, config.targetLang, result => {
 			if (!result) return
+			if (event.message.toLowerCase().replace(/\s/,'')==result.text.toLowerCase().replace(/\s/,'')) return
 			event.message = result.text
 			event.name = event.authorName = (event.name || event.authorName) + getNiceLangString(result.src)
 			mod.send(packet, version, event)
@@ -154,16 +155,15 @@ module.exports = function TranslateChat(mod) {
 			if (!result && packet == 'C_WHISPER') {
 				mod.send('C_WHISPER', version, event);
 			}
-			event.message = result.text
+			event.message = `<FONT>${result.text}</FONT>`
 			if (config.sendMore) {
-				event.message = `<FONT> ${result.text} (${result.orig}) </FONT>`
+				event.message = `<FONT>${result.text} (${result.orig})</FONT>`
 			}
 			event.name += getNiceLangString(config.sendLang)
 			mod.send(packet, version, event)
 			setTimeout(() => {
 				mod.command.message('Original message' + getNiceLangString(config.sendLang) + ': ' + result.orig.replace(/<(.+?)>|&rt;|&lt;|&gt;|/g, '').replace(/\s+$/, ''))
 			}, 50);
-
 		})
 		return false
 	}
@@ -190,28 +190,34 @@ module.exports = function TranslateChat(mod) {
 		let sanitized = message.replace(/<(.+?)>|&rt;|&lt;|&gt;|/g, '').replace(/\s+$/, '');
 		if (sanitized === '') return
 
-		const data = { sl: config.sourceLang, tl: toLang, q: sanitized };
+		const params = new URLSearchParams();
+		params.append('sl',config.sourceLang)
+		params.append('tl',toLang)
+		params.append('q',sanitized)
+		const url = 'https://translate.google.com/translate_a/single'
+			+ '?client=at&dt=t&dt=ld&dt=qca&dt=rm&dt=bd&dj=1&hl=' + toLang + '&ie=UTF-8'
+			+ '&oe=UTF-8&inputm=2&otf=2&iid=1dd3b944-fa62-4b55-b330-74909a99969e'
+
 		const options = {
 			method: 'POST',
-			uri: 'https://translate.google.com/translate_a/single'
-				+ '?client=at&dt=t&dt=ld&dt=qca&dt=rm&dt=bd&dj=1&hl=' + toLang + '&ie=UTF-8'
-				+ '&oe=UTF-8&inputm=2&otf=2&iid=1dd3b944-fa62-4b55-b330-74909a99969e',
 			encoding: 'UTF-8',
-			form: data,
+			body: params,
 			json: true,
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
 				'User-Agent': 'AndroidTranslate/5.3.0.RC02.130475354-53000263 5.1 phone TRANSLATE_OPM5_TEST_1'
 			}
 		}
-		request(options).then(result => {
+		request(url,options).then(res => res.json()).then(result => {
+			result.text=''
 			// console.log(result)
 			if (result.sentences && result.src.toLowerCase() !== toLang.toLowerCase()) {
 				for (let s of result.sentences) {
 					if (s.trans && s.trans !== sanitized) {
-						result.text = s.trans
+						s.trans = s.trans[0].toUpperCase()+s.trans.substring(1)
+						result.text += s.trans
 					}
-					if (s.translit) {
+					if (s.translit && toLang!='ru') {
 						result.text = s.translit
 					}
 				}
@@ -222,7 +228,7 @@ module.exports = function TranslateChat(mod) {
 			}
 		}).catch(e => {
 			console.log(e)
-			console.log(result)
+			console.log(options)
 		})
 	}
 
