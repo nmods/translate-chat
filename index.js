@@ -227,8 +227,8 @@ module.exports = function TranslateChat(mod) {
 				cb(result)
 			}
 		}).catch(e => {
-			console.log(e)
-			console.log(options)
+			//console.log(e)
+			//console.log(options)
 		})
 	}
 
